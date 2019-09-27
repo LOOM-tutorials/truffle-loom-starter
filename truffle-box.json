@@ -1,7 +1,6 @@
 {
   "ignore": [
-    "README.md",
-  ],
+    "README.md"],
   "commands": {
     "Compile contracts": "truffle compile",
     "Migrate contracts": "truffle migrate --network loom_dapp_chain",
