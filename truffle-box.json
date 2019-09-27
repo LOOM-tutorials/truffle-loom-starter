@@ -3,8 +3,8 @@
     "README.md"],
   "commands": {
     "Compile contracts": "truffle compile",
-    "Migrate contracts": "truffle migrate --network loom_dapp_chain",
-    "Test contracts": "truffle test --network loom_dapp_chain"
+    "Migrate contracts": "yarn deploy:reset:extdev",
+    "Run solution": "yarn serve:extdev"
   },
   "hooks": {
     "post-unpack": "yarn install "
