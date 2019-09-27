@@ -31,41 +31,6 @@ module.exports = {
     }
   },
   networks: {
-    loom_dapp_chain: {
-      provider: function() {
-        const chainId = 'default'
-        const writeUrl = 'http://127.0.0.1:46658/rpc'
-        const readUrl = 'http://127.0.0.1:46658/query'
-        const mnemonicPath = path.join(__dirname, 'loom_mnemonic')
-        const privateKeyPath = path.join(__dirname, 'loom_private_key')
-        if (fs.existsSync(privateKeyPath)) {
-          const loomTruffleProvider = getLoomProviderWithPrivateKey(privateKeyPath, chainId, writeUrl, readUrl)
-          loomTruffleProvider.createExtraAccountsFromMnemonic("gravity top burden flip student usage spell purchase hundred improve check genre", 10)
-          return loomTruffleProvider
-        } else if (fs.existsSync(mnemonicPath)) {
-          const loomTruffleProvider = getLoomProviderWithMnemonic(mnemonicPath, chainId, writeUrl, readUrl)
-          return loomTruffleProvider
-        }
-      },
-      network_id: '*'
-    },
-    loomv2b: {
-      provider: function() {
-        const chainId = 'loomv2b'
-        const writeUrl = 'http://loomv2b.dappchains.com:46658/rpc'
-        const readUrl = 'http://loomv2b.dappchains.com:46658/query'
-        const mnemonicPath = path.join(__dirname, 'loomv2b_mnemonic')
-        const privateKeyPath = path.join(__dirname, 'loomv2b_pk')
-        if (fs.existsSync(privateKeyPath)) {
-          const loomTruffleProvider = getLoomProviderWithPrivateKey(privateKeyPath, chainId, writeUrl, readUrl)
-          return loomTruffleProvider
-        } else if (fs.existsSync(mnemonicPath)) {
-          const loomTruffleProvider = getLoomProviderWithMnemonic(mnemonicPath, chainId, writeUrl, readUrl)
-          return loomTruffleProvider
-        }
-      },
-      network_id: '12106039541279'
-    },
     extdev_plasma_us1: {
       provider: function() {
         const chainId = 'extdev-plasma-us1'
@@ -101,25 +66,6 @@ module.exports = {
         }
       },
       network_id: '*'
-    },
-    rinkeby: {
-      provider: function() {
-        if (!process.env.INFURA_API_KEY) {
-          throw new Error("INFURA_API_KEY env var not set")
-        }
-        const mnemonicPath = path.join(__dirname, 'rinkeby_mnemonic')
-        const privateKeyPath = path.join(__dirname, 'rinkeby_private_key')
-        if (fs.existsSync(privateKeyPath)) {
-          const privateKey = readFileSync(path.join(__dirname, 'rinkeby_private_key'), 'utf-8')
-          return new PrivateKeyProvider(privateKey, `https://rinkeby.infura.io/v3/${process.env.INFURA_API_KEY}`, 0, 10)
-        } else if (fs.existsSync(mnemonicPath)) {
-          const mnemonic = readFileSync(path.join(__dirname, 'rinkeby_mnemonic'), 'utf-8')
-          return new HDWalletProvider(mnemonic, `https://rinkeby.infura.io/v3/${process.env.INFURA_API_KEY}`, 0, 10)
-        }
-      },
-      network_id: 4,
-      gasPrice: 15000000001,
-      skipDryRun: true
     }
   }
 }

@@ -9,6 +9,6 @@
     "Test contracts": "truffle test --network loom_dapp_chain"
   },
   "hooks": {
-    "post-unpack": "npm install "
+    "post-unpack": "yarn install "
   }
 }
