@@ -1,3 +1,15 @@
+# Before start
+
+Remember to update
+extdev_mnemonic
+and 
+mainnet_mnemonic
+
+With mnemonicks of Your LOOM deployment accounts
+If You do not have any You can create them at:
+https://dashboard.dappchains.com/add-key
+
+"Generate New Key"
 
 # Truffle DappChain Example
 
