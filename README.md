@@ -1,8 +1,11 @@
 # Before start
 
 Remember to update
+
 extdev_mnemonic
+
 and 
+
 mainnet_mnemonic
 
 With mnemonicks of Your LOOM deployment accounts
