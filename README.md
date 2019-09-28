@@ -52,17 +52,6 @@ yarn install
 
 ## Run against Loom Testnet
 
-### Generate the Loom private key
-
-The following command will download the `loom` binary and generate the private key for you:
-
-```bash
-yarn gen:extdev-key
-```
-
-This will download the loom binary and generate a private key. The private key will be saved into a file called `extdev_private_key`.
-
-
 ### Deploy to extdev_plasma_us1
 
 As an example, we will deploy and run our application against `extdev_plasma_us1`.
@@ -75,18 +64,6 @@ yarn deploy:extdev
 
 >The above command will **compile and then deploy** our smart contract to `extdev_plasma_us1`
 
-
-### Test
-
-Run this command below to send transactions to the smart contract deployed to `extdev_plasma_us1`:
-
-
-```test
-yarn test:extdev
-```
-
-If everything looks good, let's spin up a web server and interact with our smart contract.
-
 ### Start the web interface
 
 The web interface is built with React and Webpack. Open a new terminal and run the following command:
@@ -97,54 +74,6 @@ yarn serve:extdev
 
 > The web interface is available on http://localhost:8080.
 
-
-
-## Run against local Loom chain
-
-First, you have to generate a private key using:
-
-```bash
-yarn gen:loom-key
-```
-
-This will download the loom binary and write a private key to a file called  `loom_private_key`
-
-### Spin up Loom Chain
-
-In a new terminal, run:
-
-```bash
-yarn loom:init
-```
-
-and then:
-
-```bash
-yarn loom:run
-```
-
-### Deploy the smart contract
-
-To deploy, run the following command:
-
-```bash
-yarn deploy
-```
-
-### Test
-
-
-```bash
-yarn test
-```
-
-## Web interface
-
-We're ready to start the web server. In a new terminal, run:
-
-```bash
-yarn serve
-```
 
 ## Useful information
 
