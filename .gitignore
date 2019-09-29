@@ -9,4 +9,4 @@ loom
 .DS_Store
 
 #extdev_mnemonic
-#mainnet_mnemonic
+mainnet_mnemonic
