@@ -50,6 +50,23 @@ module.exports = {
       },
       network_id: '9545242630824'
     },
+    loom_dapp_chain: {
+      provider: function () {
+        const chainId = 'default'
+        const writeUrl = 'http://plasma.dappchains.com/rpc'
+        const readUrl = 'http://plasma.dappchains.com/query'
+        const mnemonicPath = path.join(__dirname, 'mainnet_mnemonic')
+        const privateKeyPath = path.join(__dirname, 'mainnet_private_key')
+        if (fs.existsSync(privateKeyPath)) {
+          const loomTruffleProvider = getLoomProviderWithPrivateKey(privateKeyPath, chainId, writeUrl, readUrl)
+          return loomTruffleProvider
+        } else if (fs.existsSync(mnemonicPath)) {
+          const loomTruffleProvider = getLoomProviderWithMnemonic(mnemonicPath, chainId, writeUrl, readUrl)
+          return loomTruffleProvider
+        }
+      },
+      network_id: '*'
+    },
     loom_mainnet: {
       provider: function () {
         const chainId = 'default'
