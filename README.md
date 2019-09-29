@@ -4,7 +4,7 @@ Remember to update
 
 extdev_mnemonic
 
-and 
+and
 
 mainnet_mnemonic
 
@@ -13,6 +13,16 @@ If You do not have any You can create them at:
 https://dashboard.dappchains.com/add-key
 
 "Generate New Key"
+
+You can view all your transaction in ExtDev blockchain explorer
+
+http://extdev-blockexplorer.dappchains.com
+
+Or in Base LOOM chain explorer
+
+https://basechain-blockexplorer.dappchains.com/
+
+dependind on environment in which You have deployed app
 
 # Truffle DappChain Example
 
