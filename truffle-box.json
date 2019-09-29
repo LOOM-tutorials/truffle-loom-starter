@@ -1,10 +1,11 @@
 {
-  "ignore": [
-    "README.md"],
+  "ignore": [],
   "commands": {
     "Compile contracts": "truffle compile",
-    "Migrate contracts": "yarn deploy:reset:extdev",
-    "Run solution": "yarn serve:extdev"
+    "Migrate contracts to test": "yarn deploy:reset:extdev",
+    "Run solutionon test netork": "yarn serve:extdev",
+    "Migrate contracts to production": "yarn deploy:reset",
+    "Run solutionon on production netork": "yarn serve"
   },
   "hooks": {
     "post-unpack": "yarn install "
